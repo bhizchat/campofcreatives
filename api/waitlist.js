@@ -50,8 +50,9 @@ module.exports = async (req, res) => {
       };
       await sgMail.send(msg);
     } catch (err) {
-      console.error('SendGrid error', err);
-      // Proceed without failing the user; we still accept the signup.
+      const sgDetails = err && err.response && err.response.body ? err.response.body : undefined;
+      console.error('SendGrid error', { message: err?.message, code: err?.code, response: sgDetails });
+      return res.status(500).json({ error: 'Email service failed', details: sgDetails });
     }
   } else {
     console.log('Waitlist signup (no email configured):', {
