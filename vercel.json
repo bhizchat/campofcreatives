@@ -1,5 +1,14 @@
 {
   "version": 2,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "waitlist.html", "use": "@vercel/static" },
+    { "src": "apply.html", "use": "@vercel/static" },
+    { "src": "apply.js", "use": "@vercel/static" },
+    { "src": "styles.css", "use": "@vercel/static" },
+    { "src": "images/**", "use": "@vercel/static" },
+    { "src": "careers/**", "use": "@vercel/static" }
+  ],
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
