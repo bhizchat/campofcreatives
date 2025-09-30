@@ -55,6 +55,13 @@ applicationForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   if (!applicationForm.reportValidity() || submitting) return;
   clearErrors();
+  // Client-side resume size guard (<= 4 MB)
+  const resumeInput = applicationForm.querySelector('input[name="resume"]');
+  const selectedFile = resumeInput?.files?.[0];
+  if (selectedFile && selectedFile.size > 4 * 1024 * 1024) {
+    showFieldError('resume', 'File is too large (max 4MB).');
+    return;
+  }
   const formData = new FormData(applicationForm);
   try {
     submitting = true;
