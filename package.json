@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@sendgrid/mail": "^8.1.0",
+    "@sendgrid/eventwebhook": "^1.5.3",
     "busboy": "^1.6.0"
   }
 }
