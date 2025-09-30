@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apply — Camp of Creatives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="apply.js" defer></script>
+  </head>
+  <body class="apply-page">
+    <main class="apply">
+      <header class="apply__intro">
+        <a class="apply__back" href="index.html">← Back to Careers</a>
+        <h1>Camp of Creatives — Application</h1>
+        <p class="apply__time">~2–4 minutes to complete</p>
+        <p class="apply__note">
+          Submit once. If we advance you, we’ll follow up with role-specific deep dives.
+        </p>
+      </header>
+
+      <form class="apply__form" id="applicationForm" novalidate>
+        <fieldset class="apply__section" aria-labelledby="section-basics">
+          <legend id="section-basics">Section A — Basics</legend>
+          <div class="field">
+            <label for="jobPosition">Job Position *</label>
+            <select id="jobPosition" name="jobPosition" required>
+              <option value="" disabled selected>Select a role</option>
+              <option data-group="engineering" value="Lead Game/Engine Engineer (UE5) – plus Gameplay/Networking Engineers">
+                Lead Game/Engine Engineer (UE5) – plus Gameplay/Networking Engineers
+              </option>
+              <option data-group="engineering" value="Realtime Streaming Engineer (WebRTC / IVS / Agora, SFU Ops)">
+                Realtime Streaming Engineer (WebRTC / IVS / Agora, SFU Ops)
+              </option>
+              <option data-group="engineering" value="Backend / Infra &amp; SRE (GameLift • Containers • CI/CD • Observability)">
+                Backend / Infra &amp; SRE (GameLift • Containers • CI/CD • Observability)
+              </option>
+              <option data-group="engineering" value="AI/ML Engineer – Virtual Try-On &amp; Avatar Personalization">
+                AI/ML Engineer – Virtual Try-On &amp; Avatar Personalization
+              </option>
+              <option data-group="art" value="Avatar / Character Tech (MetaHuman, Rigging, Cloth, ML Deformer, Ready Player Me)">
+                Avatar / Character Tech (MetaHuman, Rigging, Cloth, ML Deformer, Ready Player Me)
+              </option>
+            </select>
+            <small class="field__hint">Pick the role you’re applying for.</small>
+          </div>
+
+          <div class="field">
+            <label for="fullName">Full name *</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="location">City, Country &amp; Time Zone *</label>
+            <input id="location" name="location" type="text" placeholder="e.g., San Francisco, CA (PT)" required />
+          </div>
+
+          <div class="field field--stack">
+            <label>Links (share any that apply)</label>
+            <div class="field__group">
+              <input type="url" name="linkGithub" placeholder="GitHub URL" />
+              <input type="url" name="linkPortfolio" placeholder="Portfolio / Website" />
+              <input type="url" name="linkLinkedIn" placeholder="LinkedIn" />
+              <input type="url" name="linkReel" placeholder="Reel / ArtStation / Showreel" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="flagshipUrl">Flagship Project URL *</label>
+            <input
+              id="flagshipUrl"
+              name="flagshipUrl"
+              type="url"
+              placeholder="https://"
+              required
+            />
+            <small class="field__hint">Share the 1 project you’re most proud of.</small>
+          </div>
+
+          <div class="field">
+            <label for="flagshipSummary">What did you build? (2–3 lines) *</label>
+            <textarea id="flagshipSummary" name="flagshipSummary" rows="3" maxlength="400" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="motivation">Why Camp of Creatives? (2–3 lines) *</label>
+            <textarea id="motivation" name="motivation" rows="3" maxlength="400" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="resume">Resume / CV *</label>
+            <input id="resume" name="resume" type="file" required />
+            <small class="field__hint">Max 10 MB. Any file type is accepted.</small>
+          </div>
+
+          <div class="field">
+            <label for="workAuth">Work authorization *</label>
+            <select id="workAuth" name="workAuth" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="authorized">Yes, authorized without sponsorship</option>
+              <option value="needs-now">Need sponsorship now</option>
+              <option value="needs-future">Authorized now, may need future sponsorship</option>
+            </select>
+          </div>
+        </fieldset>
+
+        
+
+        <fieldset class="apply__section">
+          <div class="field field--checkbox">
+            <input id="privacyConsent" name="privacyConsent" type="checkbox" required />
+            <label for="privacyConsent">I acknowledge the <a href="#" class="link">Applicant Privacy Notice</a>. *</label>
+          </div>
+        </fieldset>
+
+        <button class="button button--accent apply__submit" type="submit">Submit Application</button>
+      </form>
+
+      <dialog class="apply__dialog" id="applyDialog">
+        <div class="apply__dialog-content">
+          <h2>Application received!</h2>
+          <p>We’ll review your submission and reach out if it’s a fit. Expect a response within 7 days.</p>
+          <button class="button" id="closeDialog" type="button">Close</button>
+        </div>
+      </dialog>
+    </main>
+    <footer class="site-footer">
+      <p>Questions? Contact <a href="mailto:victor@campofcreatives.com">victor@campofcreatives.com</a></p>
+    </footer>
+  </body>
+</html>
+

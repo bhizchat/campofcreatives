@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Afro Japan Waitlist — Camp of Creatives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="waitlist.js" defer></script>
+  </head>
+  <body class="apply-page">
+    <main class="apply waitlist">
+      <header class="apply__intro waitlist__intro">
+        <a class="apply__back" href="index.html">← Back to Afro Japan</a>
+        <h1>Join the Afro Japan Waitlist</h1>
+        <p class="apply__time">Takes under 2 minutes</p>
+        <p class="apply__note">
+          Reserve your crew’s spot for the first samurai battle royale × rap concert. We’ll send exclusive
+          drops, behind-the-scenes builds, and early playtest invites.
+        </p>
+      </header>
+
+      <form class="apply__form" id="waitlistForm" novalidate>
+        <fieldset class="apply__section" aria-labelledby="waitlist-basics">
+          <legend id="waitlist-basics">Your Details</legend>
+          <div class="field">
+            <label for="wlFirstName">First name</label>
+            <input id="wlFirstName" name="firstName" type="text" autocomplete="given-name" />
+          </div>
+
+          <div class="field">
+            <label for="wlEmail">Email *</label>
+            <input id="wlEmail" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="field field--stack">
+            <label for="wlRole">How do you want to experience Afro Japan? *</label>
+            <select id="wlRole" name="experience" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="solo">Solo explorer</option>
+              <option value="crew">Crew of friends</option>
+              <option value="artist">Artist / Performer</option>
+              <option value="brand">Brand / Partner</option>
+              <option value="undecided">Not sure yet</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset class="apply__section" aria-labelledby="waitlist-excitement">
+          <legend id="waitlist-excitement">Tell us more</legend>
+          <div class="field">
+            <label for="wlHype">Why are you excited?</label>
+            <textarea
+              id="wlHype"
+              name="hype"
+              rows="3"
+              maxlength="350"
+              placeholder="Drop a sentence or two about the samurai battle royale, the music, or who you hope to see on stage."
+            ></textarea>
+          </div>
+
+          <div class="field field--stack">
+            <label>Where do you want to play? (pick all that apply)</label>
+            <div class="field__options field__options--checkbox">
+              <label><input type="checkbox" name="platform" value="vr" /> VR headset</label>
+              <label><input type="checkbox" name="platform" value="pc" /> PC / Mac</label>
+              <label><input type="checkbox" name="platform" value="console" /> Console</label>
+              <label><input type="checkbox" name="platform" value="mobile" /> Mobile</label>
+            </div>
+          </div>
+
+          <div class="field field--checkbox">
+            <input id="wlEarly" name="earlyAccess" type="checkbox" />
+            <label for="wlEarly">Yes, email me about closed playtests and early builds.</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="apply__section" aria-labelledby="waitlist-consent">
+          <legend id="waitlist-consent">Stay in the loop</legend>
+          <div class="field field--checkbox">
+            <input id="wlConsent" name="consent" type="checkbox" required />
+            <label for="wlConsent">
+              I agree to receive updates about Afro Japan and accept the <a href="#" class="link">Privacy Notice</a>.
+            </label>
+          </div>
+        </fieldset>
+
+        <button class="button button--accent apply__submit" type="submit">Save my spot</button>
+      </form>
+
+      <section class="waitlist__extras" aria-labelledby="waitlist-extras">
+        <h2 id="waitlist-extras">What you get</h2>
+        <ul>
+          <li>Teaser drops: lore beats, map reveals, collaborative artist announcements.</li>
+          <li>Early access lottery for closed samurai battle royale playtests.</li>
+          <li>Priority invites to IRL pop-ups and co-creation workshops.</li>
+        </ul>
+      </section>
+
+      <dialog class="apply__dialog" id="waitlistDialog">
+        <div class="apply__dialog-content">
+          <h2>Your crew is locked in.</h2>
+          <p>Watch your inbox for the next Afro Japan drop and share the waitlist with your squad.</p>
+          <button class="button" id="closeWaitlistDialog" type="button">Back to site</button>
+        </div>
+      </dialog>
+    </main>
+    <footer class="site-footer">
+      <p>Questions? Contact <a href="mailto:victor@campofcreatives.com">victor@campofcreatives.com</a></p>
+    </footer>
+  </body>
+</html>
+
