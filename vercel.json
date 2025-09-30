@@ -1,24 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "waitlist.html", "use": "@vercel/static" },
-    { "src": "apply.html", "use": "@vercel/static" },
-    { "src": "waitlist.js", "use": "@vercel/static" },
-    { "src": "apply.js", "use": "@vercel/static" },
-    { "src": "styles.css", "use": "@vercel/static" },
-    { "src": "images/**", "use": "@vercel/static" },
-    { "src": "careers/**", "use": "@vercel/static" },
-    { "src": "api/**.js", "use": "@vercel/node" }
-  ],
-  "functions": {
-    "api/*.js": { "runtime": "nodejs18.x" }
-  },
-  "routes": [
-    { "src": "/api/apply$", "dest": "/api/apply.js" },
-    { "src": "/api/waitlist$", "dest": "/api/waitlist.js" },
-    { "src": "/api/ping$", "dest": "/api/ping.js" }
-  ],
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
