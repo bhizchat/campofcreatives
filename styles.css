@@ -876,3 +876,9 @@ main {
   }
 }
 
+
+/* Temporarily hide Genie app card */
+article.product-card[aria-labelledby="genie-card"] {
+  display: none;
+}
+
